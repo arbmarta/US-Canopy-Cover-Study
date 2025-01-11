@@ -1,0 +1,43 @@
+# --------------------------- REFERENCES -------------------------------------------------------------------------------
+# Frese, D. (2024). National canopy data dictionary. Trees at Work. Retrieved on January 10, 2025 from
+# https://hub.treesatwork.org/documents/e454ca03961646ea8b6ad31ca3d165ec/about
+
+# --------------------------- FIELD NAMES TO DESCRIPTIONS --------------------------------------------------------------
+#region
+
+field_to_description = { # Based on the National Canopy Data Dictionary
+    "Total_Ac": "Total Area Acres (Herbaceous, Shrub, Tree Canopy, Soil, Impervious, Water)",
+    "Land_Ac": "Land Acres (Total Area - Water Area)",
+    "Herb_Ac": "Herbaceous Area Acres (Grasses and ground flora)",
+    "Soil_Ac": "Soil Area Acres (Bare Earth)",
+    "IA_Ac": "Impervious Area Acres",
+    "Wat_Ac": "Water Area Acres",
+    "ScrShr_Ac": "Shrub Area Acres",
+    "TC_Ac": "Tree Canopy Over Pervious Surfaces Area Acres",
+    "IU_TC_Ac": "Impervious Under Tree Canopy Area Acres",
+    "Herb_Pct": "Herbaceous Area Percent",
+    "Soil_Pct": "Soil Area Percent",
+    "IA_Pct": "Impervious Area Percent",
+    "Wat_Pct": "Water Area Percent",
+    "TC_Pct": "Tree Canopy Over Pervious Area Percent",
+    "ScrShr_Pct": "Shrub Area Percent",
+    "IU_TC_Pct": "Impervious Under Tree Canopy Area Percent",
+    "To_TC_Pct": "Total Tree Canopy Over Impervious and Pervious Area Percent",
+    "To_TC_Ac": "Total Tree Canopy Over Impervious and Pervious Area Acres",
+    "To_Veg_Ac": "Vegetation Area Acres (Tree, Shrub, Herbaceous, Impervious Under Canopy)",
+    "To_Veg_Pct": "Vegetation Area Percent",
+    "To_IA_Ac": "Total Impervious Area Acres",
+    "To_IA_Pct": "Total Impervious Area Percent",
+    "UTC_Ac_y2": "Urban Tree Canopy Area Acres (Most Current Imagery)",
+    "UTC_Pct_y2": "Urban Tree Canopy Area Percent (Most Current Imagery)",
+    "UTC_Ac_y1": "Urban Tree Canopy Area Acres (Historic Imagery)",
+    "UTC_Pct_y1": "Urban Tree Canopy Area Percent (Historic Imagery)",
+    "ChgAc": "Difference in Urban Tree Canopy Acres (y2 - y1)",
+    "NetChg": "Net Tree Canopy Change (Percent Difference)",
+    "RelChg": "Relative Tree Canopy Change (Percent)",
+    "ucf_ira_da": "UCF-IRA Disadvantaged Area (Various Criteria for EJScreen and CEJST)",
+    "dep_ratio": "Dependency Ratio (Ratio of residents aged 0-17 & 65+ to residents aged 18-64)",
+    "cejst_da": "Climate and Environmental Justice Screening Tool (Disadvantaged Area)"
+}
+
+#endregion
