@@ -1,0 +1,117 @@
+# --------------------------- REFERENCES -------------------------------------------------------------------------------
+# Manson, S., Schroeder, J., Van Riper, D., Knowles, K., Kugler, T., Roberts, F., & Ruggles, S. (2024). IPUMS National
+# Historical Geographic Information System (Version 19.0) [dataset]. Minneapolis, MN: IPUMS. DOI: 10.18128/D050.V19.0
+
+# --------------------------- PACKAGES ---------------------------------------------------------------------------------
+#region
+
+import pandas as pd
+import geopandas as gpd
+import matplotlib.pyplot as plt
+
+#endregion
+
+# --------------------------- IMPORT SHAPEFILES ------------------------------------------------------------------------
+#region
+
+# Define path to the shapefiles
+census_block_path = "Canopy Cover Datasets/Census_Block_Groups_Land_Cover_and_Tree_Canopy_Analysis_8507568496359607047/Census_Block_Groups_Land_Cover_and_Tree_Canopy_Analysis.shp"
+census_tract_path = "Canopy Cover Datasets/Census_Tract_Land_Cover_and_Tree_Canopy_Analysis_-7678729890310320705/Census_Tract_Land_Cover_and_Tree_Canopy_Analysis.shp"
+census_urban_areas_path = "Canopy Cover Datasets/Census_Urban_Areas_Land_Cover_and_Tree_Canopy_Analysis_8856831727344188313/Census_Urban_Areas_Land_Cover_and_Tree_Canopy_Analysis.shp"
+congressional_districts_path = "Canopy Cover Datasets/Congressional_Districts_Land_Cover_and_Tree_Canopy_Analysis_608743932639067952/Congressional_Districts_Land_Cover_and_Tree_Canopy_Analysis.shp"
+states_and_territories_path = "Canopy Cover Datasets/States_and_Territories_Land_Cover_and_Tree_Canopy_Analysis_-919793024538124366/States_and_Territories_Land_Cover_and_Tree_Canopy_Analysis.shp"
+
+# Load the shapefiles using Geopandas
+census_block_shapefile = gpd.read_file(
+    "Canopy Cover Datasets/Census_Block_Groups_Land_Cover_and_Tree_Canopy_Analysis_8507568496359607047/Census_Block_Groups_Land_Cover_and_Tree_Canopy_Analysis.shp")
+census_tract_shapefile = gpd.read_file(
+    "Canopy Cover Datasets/Census_Tract_Land_Cover_and_Tree_Canopy_Analysis_-7678729890310320705/Census_Tract_Land_Cover_and_Tree_Canopy_Analysis.shp")
+census_urban_areas_shapefile = gpd.read_file(
+    "Canopy Cover Datasets/Census_Urban_Areas_Land_Cover_and_Tree_Canopy_Analysis_8856831727344188313/Census_Urban_Areas_Land_Cover_and_Tree_Canopy_Analysis.shp")
+congressional_districts_shapefile = gpd.read_file(
+    "Canopy Cover Datasets/Congressional_Districts_Land_Cover_and_Tree_Canopy_Analysis_608743932639067952/Congressional_Districts_Land_Cover_and_Tree_Canopy_Analysis.shp")
+states_and_territories_shapefile = gpd.read_file(
+    "Canopy Cover Datasets/States_and_Territories_Land_Cover_and_Tree_Canopy_Analysis_-919793024538124366/States_and_Territories_Land_Cover_and_Tree_Canopy_Analysis.shp")
+
+# Display the first few roads of the shapefiles
+print(census_block_shapefile.head())
+print(census_tract_shapefile.head())
+print(census_urban_areas_shapefile.head())
+print(congressional_districts_shapefile.head())
+print(states_and_territories_shapefile.head())
+
+# Count the number of rows in each shapefile
+print(f"Number of rows: {census_block_shapefile.shape[0]}")
+print(f"Number of rows: {census_tract_shapefile.shape[0]}")
+print(f"Number of rows: {census_urban_areas_shapefile.shape[0]}")
+print(f"Number of rows: {congressional_districts_shapefile.shape[0]}")
+print(f"Number of rows: {states_and_territories_shapefile.shape[0]}")
+
+# Print the coordinate reference systems (CRS)
+print(f"CRS: {census_block_shapefile.crs}")
+print(f"CRS: {census_tract_shapefile.crs}")
+print(f"CRS: {census_urban_areas_shapefile.crs}")
+print(f"CRS: {congressional_districts_shapefile.crs}")
+print(f"CRS: {states_and_territories_shapefile.crs}")
+
+#endregion
+
+# --------------------------- DISPLAY SHAPEFILES -----------------------------------------------------------------------
+#region
+
+# Plot the Census Block shapefile
+census_block_shapefile.plot(edgecolor="green", figsize=(10, 10))
+plt.title("Census Blocks")
+plt.xlabel("Longitude")
+plt.ylabel("Latitude")
+plt.show()
+
+# Plot the Census Tract shapefile
+census_tract_shapefile.plot(edgecolor="green", figsize=(10, 10))
+plt.title("Census Blocks")
+plt.xlabel("Longitude")
+plt.ylabel("Latitude")
+plt.show()
+
+# Plot the Census Urban Areas shapefile
+census_urban_areas_shapefile.plot(edgecolor="green", figsize=(10, 10))
+plt.title("Census Blocks")
+plt.xlabel("Longitude")
+plt.ylabel("Latitude")
+plt.show()
+
+# Plot the Congressional Districts shapefile
+congressional_districts_shapefile.plot(edgecolor="black", figsize=(10, 10))
+plt.title("Census Blocks")
+plt.xlabel("Longitude")
+plt.ylabel("Latitude")
+plt.show()
+
+# Plot the States and Territories shapefile
+states_and_territories_shapefile.plot(edgecolor="black", figsize=(10, 10))
+plt.title("Census Blocks")
+plt.xlabel("Longitude")
+plt.ylabel("Latitude")
+plt.show()
+
+#endregion
+
+# --------------------------- IMPORT US CENSUS DATA (2020) -------------------------------------------------------------
+#region
+
+# Define path to the census datasets
+census_block_census_dataset_file_path = "Census Datasets/nhgis0001_ds258_2020_blck_grp.csv"
+census_tract_census_dataset_file_path = "Census Datasets/nhgis0001_ds258_2020_tract.csv"
+census_urban_areas_census_dataset_file_path = "Census Datasets/nhgis0001_ds258_2020_urb_area.csv"
+
+# Load the census datasets using Pandas
+census_block_census_df = pd.read_csv(census_block_census_dataset_file_path)
+census_tract_census_df = pd.read_csv(census_tract_census_dataset_file_path)
+census_urban_areas_census_df = pd.read_csv(census_urban_areas_census_dataset_file_path)
+
+# Display the first few roads of the census datasets
+print(census_block_census_df.head())
+print(census_tract_census_df.head())
+print(census_urban_areas_census_df.head())
+
+#endregion
